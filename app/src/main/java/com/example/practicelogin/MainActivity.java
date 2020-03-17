@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
     Button loginBtn = null;
     TextView findPwTxt = null;
-
+    TextView signUpTxt = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         loginBtn = findViewById(R.id.loginBtn);
         findPwTxt = findViewById(R.id.findPwTxt);
+        signUpTxt = findViewById(R.id.signUpTxt);
 
 //        로그인버튼의 글자를 => 회원가입으로 변경.
         loginBtn.setText("회원가입");
@@ -53,5 +57,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//      회원가입 버튼을 누르면 => "회원가입 화면으로 이동합니다." 안내문구 출력
+        signUpTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "회원가입 화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
