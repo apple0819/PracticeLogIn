@@ -1,0 +1,2 @@
+rootProject.name='PracticeLogIn'
+include ':app'
